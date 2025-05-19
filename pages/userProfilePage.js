@@ -1,7 +1,10 @@
 // pages/UserProfileFormPage.js
+
 const { expect } = require('@playwright/test');
 
+// Page Object Model for the User Profile Form page.
 class UserProfileFormPage {
+  // Initializes the page and element locators.
   constructor(page) {
     this.page = page;
     this.firstNameInput = page.locator('[data-testid="first-name"]');
@@ -18,10 +21,12 @@ class UserProfileFormPage {
     this.submitButton = page.locator('[data-testid="submit-button"]');
   }
 
+  // Navigates to the user profile form page.
   async navigate() {
     await this.page.goto('http://127.0.0.1:5500/index.html');
   }
 
+  // Fills the entire form with the provided data.
   async fillForm(data) {
     await this.firstNameInput.fill(data.firstName);
     await this.lastNameInput.fill(data.lastName);
@@ -36,6 +41,7 @@ class UserProfileFormPage {
     if (data.github) await this.githubInput.fill(data.github);
   }
 
+  // Fills only the required fields of the form.
   async fillRequiredFields(data) {
     await this.firstNameInput.fill(data.firstName);
     await this.lastNameInput.fill(data.lastName);
@@ -44,6 +50,7 @@ class UserProfileFormPage {
     await this.confirmPasswordInput.fill(data.confirmPassword);
   }
 
+  // Submits the user profile form.
   async submitForm() {
     await this.submitButton.click();
   }

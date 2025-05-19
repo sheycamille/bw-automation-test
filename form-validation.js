@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
       // Success
-      alert("Form submitted successfully!");
+      // alert("Form submitted successfully!");
     });
   });
   

@@ -26,7 +26,9 @@ test.describe('User Profile Form Tests', () => {
       github: 'https://github.com/johndoe',
     });
     await formPage.submitForm();
-    await expect(page).not.toHaveURL(/.*error/);
+    // await expect(page).not.toHaveURL(/.*error/);
+    // await expect(page).toHaveTitle(/welcome/);
+    await expect(page.getByRole('heading', { name: 'Welcome!' })).toBeVisible();
   });
 
   test('Required fields only', async ({ page }) => {
@@ -39,6 +41,8 @@ test.describe('User Profile Form Tests', () => {
       confirmPassword: 'Password123!',
     });
     await formPage.submitForm();
-    await expect(page).not.toHaveURL(/.*error/);
+    // await expect(page).not.toHaveURL(/.*error/);
+    // await expect(page).toHaveTitle(/welcome!/);
+    await expect(page.getByRole('heading', { name: 'Welcome!' })).toBeVisible();
   });
 });

@@ -90,5 +90,14 @@
 
   <!-- Link to external JavaScript for validation -->
   <script src="form-validation.js"></script>
+  <script>
+    // Redirect to welcome.html on successful form submission
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+      if (this.checkValidity()) {
+        e.preventDefault();
+        window.location.href = 'welcome.html';
+      }
+    });
+  </script>
 </body>
 </html>
