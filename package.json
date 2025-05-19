@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "description": "| Test Case Name        | Steps                                      | Expected Result                          | Actual Result |Bugs/Defects |\r |-----------------------|--------------------------------------------|------------------------------------------|---------------|-------------|\r |Valid form submission  | Fill all fields, click submit              | Form submits with success message        | Form submits with success message         | None         |\r |Required fields only   | Fill only required fields, click submit    | Form submits with success message        | Form submits with success message         | None         |",
   "main": "form-validation.js",
-  "scripts": {},
+  "scripts": {
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.19"
+    "@types/node": "^22.15.19",
+    "allure-playwright": "^3.2.2"
   }
 }
