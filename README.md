@@ -1,3 +1,42 @@
+# BW Automation Test
+
+## Project Setup
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/sheycamille/bw-automation-test.git
+   cd bw-automation-test
+   ```
+
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
+
+## Running Tests
+
+To run all tests:
+```sh
+npx playwright test
+```
+
+## Allure Reporting
+
+1. **Run tests to generate Allure results**
+   ```sh
+   npx playwright test
+   ```
+
+2. **Generate Allure report**
+   ```sh
+   npm run allure:generate
+   ```
+
+3. **Open Allure report**
+   ```sh
+   npm run allure:open
+   ```
+
 ## ✅ Positive Test Cases
 
 | Test Case Name        | Steps                                      | Expected Result                          | Actual Result |Bugs/Defects |
